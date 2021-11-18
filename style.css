@@ -73,6 +73,8 @@ main {
 .wrapper {
     flex-grow: 1;
     padding: 30px 60px;
+    overflow: hidden;
+
 }
 
 .search_btn{
