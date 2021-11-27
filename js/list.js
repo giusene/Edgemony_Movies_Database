@@ -6,7 +6,7 @@ const List = (data) => {
         <img src="${item.poster}" />
         <div class="overlay">
         <a href="#view-${item.id}">${item.title}</a>
-        <p>${item.genre}</p>
+        <p>${item.genres}</p>
         <p>${item.year}</p>
         </div>
         <div class="edit_btn">

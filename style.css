@@ -49,14 +49,6 @@ main {
 .sidebar .menu::-webkit-scrollbar {
     width: 0em;
   }
-   
-  .sidebar .menu::-webkit-scrollbar-track {
-    background-color: rgba(10, 11, 12, 0.502);
-  }
-   
-  .sidebar .menu::-webkit-scrollbar-thumb {
-    background-color: rgb(40, 46, 82);
-}
 
 
 .sidebar .menu li a{
@@ -240,7 +232,7 @@ footer {
 
 #create textarea, #edit textarea{
     resize: none;
-    min-height: 200px;
+    min-height: 150px;
 } 
 
 #create input:focus, #create textarea:focus, 
@@ -567,4 +559,9 @@ article .description h2{
     .description {
         margin-top: 20px;
     }
+
+    #container .list-ul {
+        text-align: center;
+    }
+
 }

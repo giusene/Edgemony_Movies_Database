@@ -5,30 +5,30 @@ const Add = () => {
     const today = new Date()
 
     render(container, `<div class="form">
-    <h3>Aggiungi una nuova scheda</h3>
+    <h3>Add new movie record</h3>
     <form id="create">
         <div class="row">
-            <label for="title">Titolo:</label>
-            <input type="text" id="title" name="title" />
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required />
         </div>
         <div class="row">
             <label for="poster">Poster:</label>
             <input type="text" id="poster" name="poster" />
         </div>
         <div class="row">
-            <label for="year">Anno:</label>
-            <input type="number" min="1900" value="${today.getFullYear()}" id="year" name="year" />
+            <label for="year">Year:</label>
+            <input type="number" min="1900" value="${today.getFullYear()}" id="year" name="year" required />
         </div>
         <div class="row">
-            <label for="gen">Genere:</label>
-            <input id="gen" name="gen" />
+            <label for="gen">Genres (comma separated):</label>
+            <input id="gen" name="gen" placeholder="ex: comedy, action" required />
         </div>
         <div class="row">
-            <label for="description">Trama:</label>
+            <label for="description">Desc:</label>
             <textarea id="description" name="description" /></textarea>
         </div>
 
-        <button class="button">Salva Scheda</button>
+        <button class="button">Save</button>
     </form>
     <a class="backbutton" href="#" id="back"><</a>
     </div>`);
@@ -36,10 +36,11 @@ const Add = () => {
     const form = document.querySelector('#create');
     form.addEventListener('submit', (event) => {
         event.preventDefault();
+        const genres = event.target.gen.value.split(',')
         const movie = {
             title: event.target.title.value,
             poster: event.target.poster.value,
-            genre: event.target.gen.value,
+            genres: genres,
             year: parseInt(event.target.year.value),
             description: event.target.description.value   
         };
