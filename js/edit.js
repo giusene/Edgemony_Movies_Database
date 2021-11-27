@@ -6,30 +6,30 @@ export const Edit = (id = 0) => {
     .then((movie) => {
         const container = document.querySelector('#container');
         render(container, `<div>
-        <h3>Modifica scheda</h3>
+        <h3>Edit movie record</h3>
         <form id="edit">
             <div class="row">
-                <label for="title">Titolo:</label>
-                <input type="text" id="title" name="title" value="${movie.title}" />
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" value="${movie.title}" required />
             </div>
             <div class="row">
                 <label for="poster">Poster:</label>
                 <input type="text" id="poster" name="poster"  value="${movie.poster}"/>
             </div>
             <div class="row">
-                <label for="year">Anno:</label>
-                <input type="number" min="1900" id="year" name="year"  value="${movie.year}" />
+                <label for="year">Year:</label>
+                <input type="number" min="1900" id="year" name="year"  value="${movie.year}" required />
             </div>
             <div class="row">
-            <label for="gen">Genere:</label>
-            <input id="gen" name="gen" />
+            <label for="gen">Genres (comma separated):</label>
+            <input id="gen" name="gen" value="${movie.genres}" placeholder="ex: comedy, action" required />
         </div>
             <div class="row">
-                <label for="description">Trama:</label>
-                <textarea id="description" name="description"  />${movie.description}</textarea>
+                <label for="description">Desc:</label>
+                <textarea id="description" name="description"/>${movie.description}</textarea>
             </div>
     
-            <button class="button">Aggiorna Scheda</button>
+            <button class="button">Update</button>
         </form>
         <a class="backbutton" href="#" id="back"><</a>
         </div>`);
@@ -39,10 +39,11 @@ export const Edit = (id = 0) => {
         
         form.addEventListener('submit', (event) => {
             event.preventDefault();
+            const genres = event.target.gen.value.split(',');
             const UpdatedMovie = {
                 title: event.target.title.value,
                 poster: event.target.poster.value,
-                genre: event.target.gen.value,
+                genres: genres,
                 year: parseInt(event.target.year.value),
                 description: event.target.description.value   
             };

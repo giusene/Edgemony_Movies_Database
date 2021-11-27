@@ -1,11 +1,13 @@
 export const menu = (data) => {
     const holder = {};
     data.forEach((element) => {
-        if (holder.hasOwnProperty(element.genre)) {
-            holder[element.genre] = holder[element.genre] + element.genre;
-        } else {
-            holder[element.genre] = element.genre;
-        }
+        element.genres.forEach((item) => {
+            if (holder.hasOwnProperty(item.item)) {
+                holder[item] = holder[item] + item;
+            } else {
+                holder[item] = item;
+            }
+        })
     });
 
     const allGen = [];
@@ -23,7 +25,7 @@ export const menu = (data) => {
 
 
     const sideMenu = document.querySelector('.menu');
-    sideMenu.innerHTML = `<li><a href="" class="active">Tutti</a></li>`;
+    sideMenu.innerHTML = `<li><a href="" class="active">ALL</a></li>`;
     
     
     allGen.forEach(element => {
