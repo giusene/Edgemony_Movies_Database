@@ -560,8 +560,15 @@ article .description h2{
         margin-top: 20px;
     }
 
+    #container {
+        max-height: fit-content;
+    }
+
     #container .list-ul {
         text-align: center;
     }
+
+
+
 
 }
