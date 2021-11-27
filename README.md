@@ -9,3 +9,5 @@
 - Dynamic genres filter
 - Responsive layout
 
+### [>>> Live Demo](https://giusene.github.io/Edgemony_Movies_Database/)
+
