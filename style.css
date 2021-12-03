@@ -375,7 +375,7 @@ article .description h2{
 
 
 .search_modal{
-    position: absolute;
+    position: fixed;
     top: -2000px;
     left: 0;
     width: 100%;
