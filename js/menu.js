@@ -20,7 +20,7 @@ export const menu = (data) => {
     const sidebar = document.querySelector('.sidebar');
 
     hamburger.addEventListener('click', ()=>{
-        sidebar.classList.add('show')
+        sidebar.classList.toggle('show')
     })
 
 
